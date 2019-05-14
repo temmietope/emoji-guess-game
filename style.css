@@ -3,8 +3,12 @@
   height: 100vh;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  color: rgb(6, 62, 100);
 }
 .gameContainer {
   display: flex;
@@ -36,6 +40,10 @@
 .box span {
   font-size: 3em;
   display: none;
+}
+.score {
+  padding: 2vh;
+  flex-grow: 1;
 }
 
 @media screen and (max-width: 768px) {

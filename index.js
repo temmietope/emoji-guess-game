@@ -1,7 +1,10 @@
 const wrapper = document.querySelector(".wrapper");
 const gameContainer = document.querySelector(".gameContainer");
 const box = document.querySelectorAll(".box");
+const scoresheet = document.querySelector(".score");
 
+let score = 0;
+let attempts = 0;
 let firstClickedBox;
 let secondClickedBox;
 let canAllowClick = true;
@@ -38,14 +41,18 @@ function showEmoji() {
     return (firstClickedBox = this.firstChild);
   }
   secondClickedBox = this.firstChild;
+  attempts = attempts + 1;
 
   canAllowClick = false;
   if (firstClickedBox.className !== secondClickedBox.className) {
     firstClickedBox.parentElement.style.backgroundColor = "red";
     this.style.backgroundColor = "red";
+    scoresheet.innerHTML = `${score} / ${attempts}attempts`;
   } else {
     firstClickedBox.parentElement.style.backgroundColor = "green";
     this.style.backgroundColor = "green";
+    score = score + 1;
+    scoresheet.innerHTML = `${score} / ${attempts}attempts`;
   }
 
   setTimeout(function() {
